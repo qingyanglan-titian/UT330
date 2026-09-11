@@ -23,7 +23,7 @@
    @import must be the first thing in the file. Always.
    ------------------------------------------------------------ */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
 
 
 /* ------------------------------------------------------------
@@ -39,19 +39,19 @@
 :root, ::backdrop {
 
   /* --- type --- */
-  --sans-font: 'Inter', system-ui, sans-serif;   /* body text */
-  --heading-font: 'Instrument Serif', Georgia, serif;  /* mine, not simple.css's */
+   --sans-font: 'Cormorant Garamond', Georgia, serif;   /* body text */
+   --heading-font: 'Cormorant Garamond', Georgia, serif;  /* mine, not simple.css's */
   --mono-font: ui-monospace, Menlo, Consolas, monospace;
 
   /* --- color --- */
-  --bg:          #FCFBF9;   /* page background */
-  --accent-bg:   #F1EFEA;   /* boxes, table headers, quote backgrounds */
-  --text:        #1B1B1D;   /* body text */
-  --text-light:  #63636B;   /* captions and secondary text */
-  --border:      #D7D4CC;   /* rules and outlines */
-  --accent:      #1F5C4A;   /* links */
-  --accent-hover:#2E8268;
-  --accent-text: var(--bg); /* text sitting on top of accent */
+   --bg:          #FCFBF9;   /* page background */
+   --accent-bg:   #F1EFEA;   /* boxes, table headers, quote backgrounds */
+   --text:        #2A2826;   /* slightly warmer dark text */
+   --text-light:  #6E6B69;   /* captions and secondary text */
+   --border:      #D7D4CC;   /* rules and outlines */
+   --accent:      #9B2E2E;   /* warm red links */
+   --accent-hover:#BB3E3E;
+   --accent-text: var(--bg); /* text sitting on top of accent (light) */
   --code:        #9A2A5C;
   --marked:      #F5E06B;   /* highlighter color for <mark> */
 
@@ -67,9 +67,9 @@
    ------------------------------------------------------------ */
 
 h1, h2, h3, h4 {
-  font-family: var(--heading-font);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+   font-family: var(--heading-font);
+   font-weight: 500;
+   letter-spacing: -0.01em;
 }
 
 h1 { font-size: 2.6rem; line-height: 1.1; }
@@ -85,7 +85,38 @@ header > nav { margin-top: 0.5rem; }
 
 
 /* ------------------------------------------------------------
-   4. YOUR CSS
+    4. YOUR CSS
 
-   Write below here so you can always find your own work.
-   ------------------------------------------------------------ */
+    Write below here so you can always find your own work.
+    ------------------------------------------------------------ */
+
+/* Body and UI text: use Cormorant Garamond for body as well */
+body, p, a, li, nav, blockquote, figure, figcaption, time {
+   font-family: var(--sans-font);
+   font-weight: 400;
+   color: var(--text);
+}
+
+strong, b { font-weight: 600; }
+
+/* Keep monospace for code */
+code, pre, kbd, samp { font-family: var(--mono-font); }
+
+/* Links adopt the warm red accent */
+a, a:link, a:visited { color: var(--accent); }
+a:hover, a:active, a:focus { color: var(--accent-hover); }
+
+/* Navigation / buttons: border accent, hover fills with accent and inverts text */
+header nav a, .button, button {
+   border-color: var(--accent);
+   color: var(--text);
+}
+
+header nav a:hover, header nav a:focus,
+.button:hover, .button:focus,
+button:hover, button:focus {
+   background: var(--accent);
+   color: var(--accent-text);
+}
+
+/* Leave header background untouched (do not invert header colors) */
