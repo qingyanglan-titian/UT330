@@ -99,6 +99,55 @@ body, p, a, li, nav, blockquote, figure, figcaption, time {
 
 strong, b { font-weight: 600; }
 
+.photo-panel {
+  margin: 2rem 0;
+  padding: 1rem 1rem 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--accent-bg);
+}
+
+.figure-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.annotation-label {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+.experience-map {
+  margin: 1rem 0 2rem;
+  padding-left: 1.5rem;
+}
+
+.experience-map li {
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+
+.observation-list {
+  padding-left: 1.5rem;
+}
+
+.observation-list li {
+  margin-bottom: 0.5rem;
+}
+
 /* Keep monospace for code */
 code, pre, kbd, samp { font-family: var(--mono-font); }
 
